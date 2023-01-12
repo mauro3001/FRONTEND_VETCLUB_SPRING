@@ -1,0 +1,45 @@
+<div class="main_content">
+    <div class="contenedor" id="fondo">
+        <div class="form">
+            <form
+              [formGroup]="formLogin"
+              (ngSubmit)="postform(formLogin.value)">
+                <p class="Titulo">Inicio de Sesion</p>
+                <div>
+                    <label for="username" class="form-label">
+                        Usuario
+                    </label>
+                    <input 
+                     class="form-control"
+                     placeholder="Digite su Usuario" 
+                     type="text" 
+                     id="username"
+                     formControlName="username" />
+                </div>
+                <div>
+                    <label for="password" class="form-label">
+                        Contraseña
+                    </label>
+                    <input 
+                     class="form-control" 
+                     placeholder="Digite su Contraseña" 
+                     type="password" 
+                     id="password"
+                     formControlName="password" />
+                </div>
+                <div id="flex">
+                    <button type="submit" class="btn btn-success">
+                        Ingresar
+                    </button>
+                    <button class="btn btn-secondary" type="reset">
+                        Limpiar
+                    </button>
+                    <button class="btn btn-dark">
+                        Registrarse
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

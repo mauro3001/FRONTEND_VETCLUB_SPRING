@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.main_content{
+    position: relative;
+}
+
+#fondo{
+    width: 100%;
+    height: 100vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background-image: url('../../../assets/images/about-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Titulo{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;    
+}
+
+.contenedor{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    grid-gap: 15px;
+    padding-bottom: 20px;
+    min-width: 500px;
+}
+
+.form{
+    box-shadow: inset;
+    border-radius: 20px;
+    background-color: aquamarine;
+    min-width: 450px;
+    box-shadow: 0 0 20px 0 rgba(111, 36, 209, 0.9);
+}
+
+.contenedor form div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    margin: 0 5px 20px 5px;
+}
+
+.contenedor form label,
+.contenedor form input{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: black;
+    width: 100%;
+}
+
+#flex{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10px;
+    width: 100%;
+}

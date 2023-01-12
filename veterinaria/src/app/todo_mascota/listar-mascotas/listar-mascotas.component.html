@@ -1,0 +1,61 @@
+<div class="main_content">
+  <div class="main_content_bg">
+    <img src="../assets/images/content-bg.jpg" alt="">
+  </div>
+<div class="espacio">
+  <div class="container">
+    <div class="row">
+      <div class="card card1">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo de animal</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Historial</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Borrar</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let mas of mascotas">
+                  <td>{{ mas.id_mascota }}</td>
+                  <td>{{ mas.nombre }}</td>
+                  <td>{{ mas.tipoMascota.animal }}</td>
+                  <td>{{ mas.raza }}</td>
+                  <td>{{ mas.historial }}</td>
+                  <td><button (click)="editarMascota(mas.id_mascota)" class="btn btn-warning">Editar</button></td>
+                  <td>
+                    <button
+                      (click)="eliminar(mas.id_mascota)"
+                      class="btn btn-danger"
+                    >
+                      Borrar
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            type="submit"
+            (click)="nuevaMascota()"
+            class="btn btn-success salto"
+          >
+            Nueva Mascota
+          </button>
+          <button
+                    id="back"
+                    type="button"
+                    class="btn btn-dark salto"
+                    (click)="regresar()"
+                  >
+                    Regresar
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
