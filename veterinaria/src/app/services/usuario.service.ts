@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
+import { Login } from '../models/login';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
+  login: Login;
 
   constructor(private http: HttpClient) { }
 
@@ -44,5 +46,4 @@ export class UsuarioService {
       headers: new HttpHeaders({ 'Content-Type': 'aplication/json'})
     })
   }
-
 }

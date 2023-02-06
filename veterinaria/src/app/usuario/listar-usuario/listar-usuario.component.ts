@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
+import { LoginService } from 'src/app/services/login.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -12,14 +13,14 @@ export class ListarUsuarioComponent implements OnInit {
 
   usuario : Usuario[] = []
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, private login: LoginService) { }
 
   ngOnInit(): void {
     this.cargarUsuario()
   }
 
   cargarUsuario(){
-    this.usuarioService.obtenerUsuario().subscribe(datos=> {
+    this.usuarioService.obtenerUsuario().subscribe((datos:any)=> {
       this.usuario = datos
       console.log(this.usuario)
     })

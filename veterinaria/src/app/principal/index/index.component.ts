@@ -38,7 +38,7 @@ export class IndexComponent implements OnInit {
   }
 
   admin(){
-    this.router.navigate(['admin'])
+    this.router.navigate(['login'])
   }
 
   tienda(){

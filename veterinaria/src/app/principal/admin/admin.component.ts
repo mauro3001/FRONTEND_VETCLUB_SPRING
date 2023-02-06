@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private login: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +30,8 @@ export class AdminComponent implements OnInit {
   }
 
   home(){
-    this.router.navigate([''])
+    this.router.navigate(['']);
+    this.login.logout();
   }
 
 }

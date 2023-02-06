@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Usuario } from 'src/app/models/usuario';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { Login } from 'src/app/models/login';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   loginDat = {
     
   }
-  constructor(private router:Router, private usuario:UsuarioService, private formBuilder: FormBuilder, private snack: MatSnackBar) { }
+  constructor(private router:Router, private login:LoginService, private formBuilder: FormBuilder, private snack: MatSnackBar) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -32,14 +32,16 @@ export class LoginComponent implements OnInit {
   });
  }
 
- postform(form: Usuario){
-  this.usuario.agregarUser(form).subscribe(info=>{
+ postform(form: Login){
+  this.login.loginForm(form).subscribe((info:any)=>{
     this.snack.open('Ingreso Exitoso', 'Aceptar', {
       duration:5000
     });
     console.log(info)
-    this.router.navigate(['usuarios'])
+    this.login.loginUser(info.token);
+    this.router.navigate(['admin'])
   })
+
  }
 
  regresar(){

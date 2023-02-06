@@ -28,6 +28,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LoginComponent } from './principal/login/login.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { authInterceptorProviders } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatNativeDateModule,
     MatSnackBarModule
   ],
-  providers: [MatDatepickerModule, MatNativeDateModule ],
+  providers: [MatDatepickerModule, MatNativeDateModule, authInterceptorProviders ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
