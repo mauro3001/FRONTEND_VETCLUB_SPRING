@@ -12,7 +12,7 @@ CREATE TABLE usuario(
     correo VARCHAR(50),
     telefono BIGINT,
     nickname VARCHAR(50),
-    password VARCHAR(50),
+    password VARCHAR(200),
     PRIMARY KEY(id_usuario)
 );
 
@@ -128,6 +128,10 @@ insert into tipo_proceso values(NULL, "Vacunaciones", "Servicio de vacunaciones"
 insert into tipo_proceso values(NULL, "Masaje Relajante", "Servicio de masaje", 15);
 insert into tipo_proceso values(NULL, "Limpieza Dental", "Servicio de higiene", 30);
 insert into tipo_proceso values(NULL, "Tests Serológicos", "Para identificar diversas enfermedades infecciosas", 60);
+
+INSERT INTO usuario values(NULL, "admin", "admin@vetclub.com", 3162738492, "admin", "$2a$10$Ip.CP.og0W5xutlCofx2BOWeEEegHLIHo0TahaEChu13Cw4IYkRui");
+INSERT INTO usuario values(NULL, "veterinario", "veterinario@vetclub.com", 3152738452, "vetVetclub", "$2a$10$xugaIayFwghPnSiOcDVUoexY2OnZf12NNmEdyosIIgUtktvm6pb3O");
+INSERT INTO usuario values(NULL, "estilista", "estilista@vetclub.com", 3182538492, "estVetclub", "$2a$10$Ip.CP.og0W5xutlCofx2BOWeEEegHLIHo0TahaEChu13Cw4IYkRui");
 
 
 SET SQL_SAFE_UPDATES = 0;

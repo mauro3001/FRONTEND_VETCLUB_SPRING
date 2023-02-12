@@ -52,6 +52,7 @@ p {
 .heading_container h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+  font-size: 25px;
 }
 
 .heading_container.heading_center {
@@ -359,7 +360,8 @@ a:focus {
   padding-bottom: 15px;
   position: relative;
   text-transform: uppercase;
-  font-weight: 600;
+  font: 60px Roboto, "Helvetica Neue", sans-serif;
+  font-weight: bold;
 }
 
 .slider_section .detail-box h1 span {
@@ -732,7 +734,7 @@ a:focus {
 }
 
 .contact_section .heading_container {
-  margin-bottom: 45px;
+  margin-bottom: 0;
 }
 
 .contact_section .form_container input {
@@ -961,4 +963,9 @@ a:focus {
   cursor: pointer;
   background-color: transparent;
   color: #55e9bc;
+}
+
+.btn-primary{
+  background-color: #55e9bc;
+  border-color: #55e9bc;
 }

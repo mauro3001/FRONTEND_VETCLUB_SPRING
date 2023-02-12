@@ -35,9 +35,11 @@ export class LoginComponent implements OnInit {
  postform(form: Login){
   this.login.loginForm(form).subscribe((info:any)=>{
     this.snack.open('Ingreso Exitoso', 'Aceptar', {
-      duration:5000
+      duration:8000,
+      verticalPosition: 'top',
+      horizontalPosition: 'end',
+      panelClass: ['mat-accent'] 
     });
-    console.log(info)
     this.login.loginUser(info.token);
     this.router.navigate(['admin'])
   })

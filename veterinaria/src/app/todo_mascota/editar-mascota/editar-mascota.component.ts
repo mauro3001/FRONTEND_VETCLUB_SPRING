@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { mostrarMascota } from 'src/app/models/mostrar-mascota';
 import { MascotaService } from 'src/app/services/mascota.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-mascota',
@@ -16,7 +17,7 @@ export class EditarMascotaComponent implements OnInit {
   datosmascotas !: mostrarMascota
 
   editarMascota = new FormGroup({
-    id_tipo_mascota: new FormControl(''),
+    tipoMascota: new FormControl(''),
     nombre: new FormControl(''),
     raza: new FormControl(''),
     historial: new FormControl(''),
@@ -28,7 +29,7 @@ export class EditarMascotaComponent implements OnInit {
       this.datosmascotas = datos;
       console.log(datos)
       this.editarMascota.setValue({
-        'id_tipo_mascota': this.datosmascotas.tipoMascota.id_tipo_mascota,
+        'tipoMascota': this.datosmascotas.tipoMascota,
         'nombre': this.datosmascotas.nombre,
         'raza': this.datosmascotas.raza,
         'historial': this.datosmascotas.historial,
@@ -39,8 +40,7 @@ export class EditarMascotaComponent implements OnInit {
     putform(form: mostrarMascota){
     let masid_up = this.activeroute.snapshot.paramMap.get('id_mascota');
     this.mascota.putMascota(form,masid_up).subscribe(datos=>{
-      console.log(datos)
-      alert("Mascota actualizada exitosamente")
+      Swal.fire('Mascota Actualizada', 'Mascota actualizada exitosamente', 'success');
       this.router.navigate(['mascotas']);
     })
   }

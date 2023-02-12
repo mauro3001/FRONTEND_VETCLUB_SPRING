@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cita } from 'src/app/models/cita';
 import { CitaService } from 'src/app/services/cita.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-programada',
@@ -21,7 +22,6 @@ export class ProgramadaComponent implements OnInit {
   cargarCita(){
     this.citaService.obtenerCita().subscribe(datos=> {
       this.cita = datos
-      console.log(this.cita)
     })
   }
 
@@ -39,9 +39,8 @@ export class ProgramadaComponent implements OnInit {
 
   eliminarCita(id_cita: any){
     this.citaService.eliminarCita(id_cita).subscribe(fin=> {
-      this.cargarCita()
-      console.log(fin)
-      alert("Cita eliminada con exito")
+      this.cargarCita();
+      Swal.fire('Cita Eliminado', 'Cita eliminada con exito', 'success');
     })
   }
 

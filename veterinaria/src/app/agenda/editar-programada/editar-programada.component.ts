@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cita } from 'src/app/models/cita';
 import { CitaService } from 'src/app/services/cita.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-programada',
@@ -17,9 +18,9 @@ export class EditarProgramadaComponent implements OnInit {
 
   editarCita = new FormGroup({
     profesional : new FormControl(''),
-    tipo_mascota : new FormControl(''),
+    tipoMascota : new FormControl(''),
     nickname : new FormControl(''),
-    tipo_proceso : new FormControl(''),
+    tipoProceso : new FormControl(''),
     fecha : new FormControl(''),
     hora : new FormControl('')
   })
@@ -28,12 +29,11 @@ export class EditarProgramadaComponent implements OnInit {
     let id_cita = this.activeroute.snapshot.paramMap.get('id_cita')
     this.cita.extraerCita(id_cita).subscribe(datos=>{
       this.datoscita = datos;
-      console.log(datos)
       this.editarCita.setValue({
         'profesional': this.datoscita.profesional,
-        'tipo_mascota': this.datoscita.tipo_mascota,
+        'tipoMascota': this.datoscita.tipoMascota,
         'nickname': this.datoscita.nickname,
-        'tipo_proceso': this.datoscita.tipo_proceso,
+        'tipoProceso': this.datoscita.tipoProceso,
         'fecha': this.datoscita.fecha,
         'hora': this.datoscita.hora,
       })
@@ -43,8 +43,7 @@ export class EditarProgramadaComponent implements OnInit {
   putform(form: Cita){
     let citaid_up = this.activeroute.snapshot.paramMap.get('id_cita');
     this.cita.putCita(form,citaid_up).subscribe(datos=>{
-      console.log(datos)
-      alert("Cita actualizada exitosamente")
+      Swal.fire('Cita Actualizada', 'Cita actualizada exitosamente', 'success');
       this.router.navigate(['programadas']);
     })
   }

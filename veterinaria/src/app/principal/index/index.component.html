@@ -44,10 +44,11 @@
           <div class="" id="">
 
             <div class="User_option">
-              <a class="espacio" href="http://localhost:4200/#servicios">Servicios</a>
-              <a class="espacio" href="http://localhost:4200/#info">Informacion</a>
-              <a class="espacio" href="http://localhost:4200/#team">Equipo</a>
-              <a class="espacio" href="http://localhost:4200/#help">Ayuda</a>
+              <a class="espacio" href="#servicios">Servicios</a>
+              <a class="espacio" href="#info">Informacion</a>
+              <a class="espacio" href="#team">Equipo</a>
+              <a class="espacio" href="#help">Ayuda</a>
+              <a class="espacio" (click)="admin()">¿Eres Admin?</a>
             </div>
 
             <div class="custom_menu-btn">
@@ -59,7 +60,7 @@
             </div>
             <div id="myNav" class="overlay">
               <div class="overlay-content">
-                <a class="cliqueame" href="index.html">Home</a>
+                <a class="cliqueame" href="#inicioP">Home</a>
                 <a class="cliqueame" (click)="admin()">Admin</a>
               </div>
             </div>
@@ -82,7 +83,7 @@
                 Vetclub nace tras la necesidad de brindar una atención especializada a nuestras mascotas ya que muchas veces estas no reciben los cuidados necesarios en el momento que lo más necesitan.
                 Por medio del software VetClub esperamos brindar una asistencia integral, óptima y responsable, con el objetivo de facilitar la vida de los clientes al agendar su cita sin salir de casa, evitando filas y con un seguimiento detallado de acuerdo a la atención brindada.
               </p>
-              <a href="http://localhost:4200/#info">
+              <a href="#info">
                 Leer más
               </a>
             </div>
@@ -156,9 +157,8 @@
         </div>
         <div class="btn-box">
           <a href="">
-            Read More
+            LEER MÁS
           </a>
-          <button class="btn"><i class="fa fa-home" (click)="scrollUp()"></i></button>
         </div>
       </div>
     </section>
@@ -188,7 +188,7 @@
                 <li>Encontraremos disponibilidad en nuestro horario para adaptarnos al suyo.</li>
                 <li>Cualquier duda sobre las citas, diagnósticos, calendarios, se la solucionaremos en el menor tiempo posible.</li>
               </p>
-              <a href="http://localhost:4200/#inicioP">
+              <a href="#inicioP">
                 Leer Más
               </a>
             </div>
@@ -216,7 +216,7 @@
                 <li>Atendemos a cada mascota como si fuera nuestra. Esta es la mejor forma de poner toda la atención a disposicion del cliente.</li>
                 <li>Porqué entendemos que su mascota es única, ninguna otra es igual, y le atenderemos con eso en mente.</li>
               </p>
-              <a href="http://localhost:4200/#/servicios">
+              <a href="#servicios">
                 Reserva Ahora
               </a>
             </div>
@@ -301,9 +301,9 @@
 
         <p class="desc">Nuestro laborioso equipo de trabajo</p>
         <div class="row">
-        <div class="col-md-4" *ngFor="let pro of profesional">
+        <div class="col-md-3" *ngFor="let pro of profesional">
           <div class="card" style="width: 18rem">
-            <img src="../assets/img/team/usuario.png " class="card-img-top" alt="...">
+            <img src="../assets/images/doctors.jpg " class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card-title">{{pro.nombre}}</h2>
               <p class="card-text">{{pro.correo}}</p>
@@ -421,7 +421,7 @@
                 </div>
                 <div class="d-flex ">
                   <button>
-                    SEND
+                    ENVIAR
                   </button>
                 </div>
               </form>
@@ -462,27 +462,27 @@
             <div class="info_link-box">
               <ul>
                 <li class="active">
-                  <a href="http://localhost:4200/#inicioP">
+                  <a href="#inicioP">
                     Principal
                   </a>
                 </li>
                 <li>
-                  <a href="http://localhost:4200/#servicios">
+                  <a href="#servicios">
                     Servicios
                   </a>
                 </li>
                 <li>
-                  <a href="http://localhost:4200/#info">
+                  <a href="#info">
                     Información
                   </a>
                 </li>
                 <li>
-                  <a href="http://localhost:4200/#team">
+                  <a href="#team">
                     Equipo
                   </a>
                 </li>
                 <li>
-                  <a href="http://localhost:4200/#help">
+                  <a href="#help">
                     Ayuda
                   </a>
                 </li>
@@ -534,9 +534,9 @@
           </div>
           <div class="col-md-6 col-lg-3 ">
             <div class="info_form ">
-              <h5>
+              <h6>
                 Newsletter
-              </h5>
+              </h6>
               <form action="#">
                 <input type="email" placeholder="Enter your email">
                 <button>

@@ -111,7 +111,7 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4" class="overlay-content">
             <div class="box " (click)="programadas()">
               <div class="img-box sevice">
                 <img src="../assets/images/agenda1.png" alt="">
@@ -122,37 +122,6 @@
                 </h5>
                 <p>
                   Sección para la administración de la agenda.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="box " (click)="mascotas()">
-              <div class="img-box">
-                <img src="../assets/images/s2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  No va nada por ahora
-                </h5>
-                <p>
-                  Sección para la administración de mascotas.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4">
-            <div class="box " (click)="mascotas()">
-              <div class="img-box">
-                <img src="../assets/images/pro1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  No va nada por ahora
-                </h5>
-                <p>
-                  Sección para la administración de los profesionales.
                 </p>
               </div>
             </div>
@@ -178,7 +147,7 @@
             <div class="detail-box">
               <div class="heading_container">
                 <h2>
-                  SOBRE LA ADMINISTRACION
+                  SOBRE LA ADMINISTRACIÓN
                 </h2>
               </div>
               <p>
@@ -195,7 +164,7 @@
 
     <!-- contact section -->
 
-    <section class="contact_section layout_padding">
+    <section class="contact_section layout_padding" id="help">
       <div class="container">
         <div class="heading_container">
           <h2>
@@ -260,22 +229,22 @@
             <div class="info_link-box">
               <ul>
                 <li class="active">
-                  <a href="http://localhost:4200/admin/#servicios">
-                    Inicio
+                  <a href="#inicioP">
+                    Principal
                   </a>
                 </li>
                 <li>
-                  <a href="http://localhost:4200/admin/#about">
-                    A cerca de
+                  <a href="#about">
+                    Informacion
                   </a>
                 </li>
                 <li>
-                  <a href="http://localhost:4200/admin/#servicios">
+                  <a href="#servicios">
                     Servicios
                   </a>
                 </li>
                 <li>
-                  <a href="http://localhost:4200/admin/#about">
+                  <a href="#help">
                     Contacto
                   </a>
                 </li>
@@ -327,9 +296,9 @@
           </div>
           <div class="col-md-6 col-lg-3 ">
             <div class="info_form ">
-              <h5>
+              <h6>
                 Newsletter
-              </h5>
+              </h6>
               <form action="#">
                 <input type="email" placeholder="Enter your email">
                 <button>

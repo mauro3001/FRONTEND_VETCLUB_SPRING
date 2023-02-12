@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { mostrarMascota } from 'src/app/models/mostrar-mascota';
 import { MascotaService } from 'src/app/services/mascota.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-listar-mascotas',
   templateUrl: './listar-mascotas.component.html',
@@ -20,7 +20,6 @@ export class ListarMascotasComponent implements OnInit {
   cargarMascos(){
     this.mascotaService.obtenerMascotas().subscribe(datos=> {
       this.mascotas = datos
-      console.log(this.mascotas)
     })
   }
 
@@ -35,8 +34,7 @@ export class ListarMascotasComponent implements OnInit {
   eliminar(id_mascota: any){
     this.mascotaService.eliminarMasco(id_mascota).subscribe(resultado=> {
       this.cargarMascos()
-      console.log(resultado)
-      alert("Mascota eliminada satisfactoriamente")
+      Swal.fire('Mascota Eliminada', 'Mascota eliminada exitosamente', 'success');
     })
   }
 

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CitaService } from 'src/app/services/cita.service';
 import { Cita } from 'src/app/models/cita';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cita-style',
@@ -13,9 +14,9 @@ export class CitaStyleComponent implements OnInit {
 
   formCita2 = new FormGroup({
     profesional : new FormControl(''),
-    tipo_mascota : new FormControl(''),
+    tipoMascota : new FormControl(''),
     nickname : new FormControl(''),
-    tipo_proceso : new FormControl(''),
+    tipoProceso : new FormControl(''),
     fecha : new FormControl(''),
     hora : new FormControl('')
   })
@@ -27,8 +28,7 @@ export class CitaStyleComponent implements OnInit {
 
   postform(form: Cita){
     this.cita.agregarCita(form).subscribe(info=>{
-      alert('Se a programado la lista con exito')
-      console.log(info)
+      Swal.fire('Cita Programada', 'Se a programado la cita con exito', 'success');
       this.router.navigate([''])
     })
   }

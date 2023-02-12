@@ -2,13 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { mostrarMascota } from '../models/mostrar-mascota';
-import { Mascota } from '../models/mascota';
-
 @Injectable({
   providedIn: 'root'
 })
 export class MascotaService {
-  formMascota : Mascota;
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +13,7 @@ export class MascotaService {
 
   //metodo para llamar la informacion de las mascotas conectandose a la bd y usando la interfaz
   obtenerMascotas():Observable<mostrarMascota[]>{
-    let ruta = this.url+'s'
+    let ruta = this.url+'s';
     return this.http.get<mostrarMascota[]>(ruta);
   }
 
@@ -32,9 +29,9 @@ export class MascotaService {
   }
 
   //metodo para agregar una nueva mascota
-  agregarMasco(form:Mascota):Observable<Mascota>{
+  agregarMasco(form:mostrarMascota):Observable<mostrarMascota>{
     let way = this.url+'/agregar';
-    return this.http.post<any>(way,this.formMascota)
+    return this.http.post<any>(way,form)
   } 
 
   //metodo para eliminar una mascota

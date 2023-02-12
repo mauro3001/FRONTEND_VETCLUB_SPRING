@@ -7,21 +7,25 @@
 }
 
 .espacio{
-display: flex;
-  padding-top: 60px;
-  padding-left: 220px;
-  margin: auto;
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  place-items: center;
 }
 
 .container{
-  margin-right: 200px;
   width: 100%;
 }
 
 .card1{
-  padding: 0;
-  margin: 0;
-  display: flex;
+  display: grid;
+  width: 100%;
+  place-items: center;
+  min-width: 1000px;
+}
+
+div .card-body{
+  width: 100%;
 }
 
 table{
@@ -72,3 +76,21 @@ button{
   text-align: center;
 }
 
+.card{
+  padding: auto;
+}
+
+.b1t{
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  margin: 0%;
+  padding-left: 8px;
+}
+
+.fa{
+  font: normal normal normal 18px/1 FontAwesome;
+}
+
+button {
+  margin-left: 10px;
+}

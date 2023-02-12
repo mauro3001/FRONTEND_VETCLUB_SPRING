@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Profesional } from 'src/app/models/profesional';
 import { ProfesionalService } from 'src/app/services/profesional.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-profesional',
@@ -16,7 +17,7 @@ export class EditarProfesionalComponent implements OnInit {
   datosprofesional !: Profesional;
 
   editarProfesional = new FormGroup({
-    tipo_profesional : new FormControl(''),
+    tipoProfesional : new FormControl(''),
     nombre : new FormControl(''),
     correo : new FormControl(''),
     nickname : new FormControl('')
@@ -26,9 +27,8 @@ export class EditarProfesionalComponent implements OnInit {
     let id_user = this.activeroute.snapshot.paramMap.get('id_profesional')
     this.profesional.extraerProfesional(id_user).subscribe(datos=>{
       this.datosprofesional = datos;
-      console.log(datos)
       this.editarProfesional.setValue({
-        'tipo_profesional': this.datosprofesional.tipoProfesional,
+        'tipoProfesional': this.datosprofesional.tipoProfesional,
         'nombre': this.datosprofesional.nombre,
         'correo': this.datosprofesional.correo,
         'nickname': this.datosprofesional.nickname,
@@ -39,8 +39,7 @@ export class EditarProfesionalComponent implements OnInit {
   putform(form: Profesional){
     let proid_up = this.activeroute.snapshot.paramMap.get('id_profesional');
     this.profesional.putProfesional(form,proid_up).subscribe(datos=>{
-      console.log(datos)
-      alert("Profesional actualizada exitosamente")
+      Swal.fire('Profesional Actualizado', 'Profesional actualizado exitosamente', 'success');
       this.router.navigate(['profesionales']);
     })
   }

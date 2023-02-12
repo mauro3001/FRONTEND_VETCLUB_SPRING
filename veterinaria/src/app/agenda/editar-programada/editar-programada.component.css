@@ -5,8 +5,9 @@
 
 .espacio {
   width: 100%;
-  margin: auto;
-  display: flex;
+  height: 100vh;
+  display: grid;
+  place-items: center;
 }
 
 .estilo {
@@ -53,9 +54,17 @@ button {
   opacity: .1;
 }
 
+.campos{
+  display: grid;
+  place-items: center;
+  padding-bottom: 8%;
+}
+
 .card{
-  padding: auto;
-  margin-top: 40px;
+  display: grid;
+  place-items: center;
+  width: 80%;
+  min-width: 260px;
 }
 
 .b1t{
@@ -64,5 +73,9 @@ button {
   font-size: 16px;
   margin: 0%;
   padding-left: 8px;
+}
+
+.fa{
+  font: normal normal normal 17px/1 FontAwesome;
 }
 

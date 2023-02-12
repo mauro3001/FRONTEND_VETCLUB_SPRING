@@ -11,7 +11,7 @@
             class="img-fluid rounded-start"
           />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 campos">
           <div class="card-body">
             <div class="container">
               <form
@@ -52,17 +52,31 @@
                     formControlName="telefono"
                   />
                 </div>
-
+                
                 <div class="col-md-4">
-                  <label for="nickname" class="form-label"
+                  <label for="username" class="form-label"
                     >Nombre de Usuario</label
                   >
                   <input
                     placeholder="Nombre de Usuario"
                     type="text"
                     class="form-control"
-                    id="nickname"
-                    formControlName="nickname"
+                    id="username"
+                    formControlName="username"
+                  />
+                  <mat-hint style="color: black;">El nombre de usuario debe ser unico</mat-hint>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="password" class="form-label"
+                    >Contraseña</label
+                  >
+                  <input
+                    placeholder="Digite la Contraseña"
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    formControlName="password"
                   />
                 </div>
 

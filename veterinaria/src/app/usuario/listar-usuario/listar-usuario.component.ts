@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { LoginService } from 'src/app/services/login.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-listar-usuario',
   templateUrl: './listar-usuario.component.html',
@@ -20,9 +20,8 @@ export class ListarUsuarioComponent implements OnInit {
   }
 
   cargarUsuario(){
-    this.usuarioService.obtenerUsuario().subscribe((datos:any)=> {
+    this.usuarioService.obtenerUsuario().subscribe(datos=> {
       this.usuario = datos
-      console.log(this.usuario)
     })
   }
 
@@ -37,8 +36,7 @@ export class ListarUsuarioComponent implements OnInit {
   eliminarUser(id_usuario: any){
     this.usuarioService.eliminarUsuario(id_usuario).subscribe(fin=> {
       this.cargarUsuario()
-      console.log(fin)
-      alert("Usuario eliminado correctamente")
+      Swal.fire('Usuario Eliminado', 'Usuario eliminado correctamente', 'success');
     })
   }
 

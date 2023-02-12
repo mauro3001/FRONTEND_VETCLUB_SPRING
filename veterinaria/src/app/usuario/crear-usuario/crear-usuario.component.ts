@@ -38,7 +38,6 @@ export class CrearUsuarioComponent implements OnInit {
   postform(form: Usuario){
     this.usuario.agregarUser(form).subscribe(info=>{
       Swal.fire('Usuario Guardado', 'Usuario registrado con exito', 'success');
-      console.log(info)
       this.router.navigate(['usuarios'])
     })
   }

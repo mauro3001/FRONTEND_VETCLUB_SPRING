@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Mascota } from 'src/app/models/mascota';
 import { mostrarMascota } from 'src/app/models/mostrar-mascota';
 import { MascotaService } from 'src/app/services/mascota.service';
-
-interface TipoMascota {
-  id_tipo_mascota: number;
-  animal: String;
-}
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-mascota',
   templateUrl: './mascota.component.html',
@@ -19,7 +13,6 @@ interface TipoMascota {
 
 export class MascotaComponent implements OnInit {
 
-  tipoMascota : TipoMascota
   //formulario de la mascota
   formMascota : FormGroup;
 
@@ -27,12 +20,6 @@ export class MascotaComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
-    let id_tipo_mascota = this.formMascota.get("id_tipo_mascota")?.value;
-    let animal = this.formMascota.get("animal")?.value;
-    this.tipoMascota = {
-      id_tipo_mascota: id_tipo_mascota,
-      animal: animal,
-    };
   }
 
   /*
@@ -41,7 +28,7 @@ export class MascotaComponent implements OnInit {
   buildForm(){
     this.formMascota = this.formBuilder.group({
       nombre : [null],
-      id_tipo_mascota: [null],
+      tipoMascota: [null],
       animal: [null],
       raza: [null],
       historial: [null],
@@ -50,8 +37,7 @@ export class MascotaComponent implements OnInit {
   
   postform(form: mostrarMascota){
     this.mascota.agregarMasco(form).subscribe(info=>{
-      alert('Se ha registrado con exito')
-      console.log(info)
+      Swal.fire('Mascota Guardada', 'Mascota registrada con exito', 'success');
       this.router.navigate(['/mascotas']);
     })
     

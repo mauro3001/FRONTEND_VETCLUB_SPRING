@@ -11,7 +11,7 @@
             class="img-fluid rounded-start"
           />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 campos">
           <div class="card-body">
             <div class="container">
 
@@ -23,22 +23,22 @@
                 <p class="estilo">Agendar Cita</p>
 
                 <div class="col-md-4">
-                  <label for="tipo_proceso" class="form-label"
+                  <label for="tipoProceso" class="form-label"
                     >Seleccione Tipo de Proceso</label
                   >
                   <select
                     class="form-select"
                     aria-label="Default select example"
                     type="text"
-                    id="tipo_procesos"
-                    formControlName="tipo_proceso"
+                    id="tipoProceso"
+                    formControlName="tipoProceso"
                   >
                     <option value="" disabled selected>
                       Seleccione una opción
                     </option>
                     <option value="2">Corte de Pelo</option>
                     <option value="3">Baño</option>
-                    <option value="5">Masasje Relajante</option>
+                    <option value="5">Masaje Relajante</option>
                     <option value="6">Limpieza Dental</option>
                   </select>
                 </div>
@@ -63,15 +63,15 @@
                 </div>
 
                 <div class="col-md-4">
-                  <label for="tipo_mascota" class="form-label"
+                  <label for="tipoMascota" class="form-label"
                     >Seleccione tu mascota</label
                   >
                   <select
                     class="form-select"
                     aria-label="Default select example"
                     type="text"
-                    id="tipo_mascota"
-                    formControlName="tipo_mascota"
+                    id="tipoMascota"
+                    formControlName="tipoMascota"
                   >
                     <option value="" disabled selected>
                       Seleccione una opción
@@ -92,7 +92,7 @@
                   />
                 </div>
 
-                <div class="col-md-4">
+                <!--<div class="col-md-4">
                   <label for="fecha" class="form-label">Fecha</label>
                   <div class="input-group date" data-provide="datepicker">
                     <input type="text" class="form-control" placeholder="AAAA-MM-DD" formControlName="fecha">
@@ -112,6 +112,29 @@
                           </span>
                         </div>
                   </div>
+                </div>-->
+
+                <div class="col-md-4">
+                  <label for="fecha" class="form-label">Fecha</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="fecha"
+                    formControlName="fecha"
+                    placeholder="AAAA-MM-DD"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label for="hora" class="form-label">Hora</label>
+                  <input
+                    type="time"
+                    class="form-control"
+                    id="hora"
+                    formControlName="hora"
+                    placeholder="HH:MM"
+                    step="2"
+                  />
                 </div>
 
                 <div class="d-grid gap-2 d-md-block estilos">

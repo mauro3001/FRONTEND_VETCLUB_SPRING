@@ -50,6 +50,7 @@ p {
 .heading_container h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+  font-size: 35px;
 }
 
 .heading_container.heading_center {

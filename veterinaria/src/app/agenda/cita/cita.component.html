@@ -7,11 +7,11 @@
       <div class="row g-0">
         <div class="col-md-4">
           <img
-            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1974&q=80"
+            src="https://i.pinimg.com/736x/10/1b/be/101bbe25a7fabf68e7e95be52f641815.jpg"
             class="img-fluid rounded-start"
           />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 campos">
           <div class="card-body">
             <div class="container">
 
@@ -23,15 +23,15 @@
                 <p class="estilo">Agendar Cita</p>
 
                 <div class="col-md-4">
-                  <label for="tipo_proceso" class="form-label"
+                  <label for="tipoProceso" class="form-label"
                     >Seleccione Tipo de Proceso</label
                   >
                   <select
                     class="form-select"
                     aria-label="Default select example"
                     type="text"
-                    id="tipo_procesos"
-                    formControlName="tipo_proceso"
+                    id="tipoProceso"
+                    formControlName="tipoProceso"
                   >
                     <option value="" disabled selected>
                       Seleccione una opción
@@ -65,15 +65,15 @@
                 </div>
 
                 <div class="col-md-4">
-                  <label for="tipo_mascota" class="form-label"
+                  <label for="tipoMascota" class="form-label"
                     >Seleccione tu mascota</label
                   >
                   <select
                     class="form-select"
                     aria-label="Default select example"
                     type="text"
-                    id="tipo_mascota"
-                    formControlName="tipo_mascota"
+                    id="tipoMascota"
+                    formControlName="tipoMascota"
                   >
                     <option value="" disabled selected>
                       Seleccione una opción
@@ -94,24 +94,48 @@
                   />
                 </div>
 
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                   <label for="fecha" class="form-label">Fecha</label>
                   <div class="input-group date" data-provide="datepicker">
-                    <input type="text" class="form-control" placeholder="AAAA-MM-DD" formControlName="fecha">
+                    <input type="text" id="fecha_ini" class="form-control" placeholder="AAAA-MM-DD" formControlName="fecha">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
-                    <!-- <mat-form-field appearance="fill">
+                    <mat-form-field appearance="fill">
                       <mat-label>Choose a date</mat-label>
                       <input matInput [matDatepicker]="picker">
                       <mat-hint>MM/DD/YYYY</mat-hint>
                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                       <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field> -->
+                    </mat-form-field> 
                   </div>
+                  <mat-hint style="color: black;">Formato (AAAA-MM-DD)</mat-hint>
+                </div>-->
+
+                <div class="col-md-4">
+                  <label for="fecha" class="form-label">Fecha</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="fecha"
+                    formControlName="fecha"
+                    placeholder="AAAA-MM-DD"
+                  />
                 </div>
 
                 <div class="col-md-4">
+                  <label for="hora" class="form-label">Hora</label>
+                  <input
+                    type="time"
+                    class="form-control"
+                    id="hora"
+                    formControlName="hora"
+                    placeholder="HH:MM"
+                    step="2"
+                  />
+                </div>
+
+                <!--<div class="col-md-4">
                   <label for="hora" class="form-label">Hora</label>
                     <div class="form-group">
                         <div class='input-group date' id='datetimepicker3'>
@@ -121,7 +145,8 @@
                           </span>
                         </div>
                     </div>
-                </div>
+                    <mat-hint style="color: black;">Formato (HH:MM)</mat-hint>
+                </div>-->
 
                 <div class="d-grid gap-2 d-md-block estilos">
                   <button type="submit" class="btn btn-success register">

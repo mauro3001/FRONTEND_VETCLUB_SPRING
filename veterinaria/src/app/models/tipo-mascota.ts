@@ -1,4 +1,4 @@
-export interface tipoMascota{
+export interface tipoMascota {
     id_tipo_mascota: String;
-    animal: String;
+    animal?: String;
 }

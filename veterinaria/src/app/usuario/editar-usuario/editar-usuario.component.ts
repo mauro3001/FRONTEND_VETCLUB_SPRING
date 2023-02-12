@@ -3,7 +3,7 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-editar-usuario',
   templateUrl: './editar-usuario.component.html',
@@ -19,19 +19,20 @@ export class EditarUsuarioComponent implements OnInit {
     nombre : new FormControl(''),
     correo : new FormControl(''),
     telefono : new FormControl(''),
-    nickname : new FormControl('')
+    username : new FormControl(''),
+    password : new FormControl(''),
   });
 
   ngOnInit(): void {
     let id_user = this.activeroute.snapshot.paramMap.get('id_usuario')
     this.usuario.extraerUsuario(id_user).subscribe(datos=>{
       this.datosusuarios = datos;
-      console.log(datos)
       this.editarform.setValue({
         'nombre': this.datosusuarios.nombre,
         'correo': this.datosusuarios.correo,
         'telefono': this.datosusuarios.telefono,
-        'nickname': this.datosusuarios.username,
+        'username': this.datosusuarios.username,
+        'password': this.datosusuarios.password,
       })
     })
   }
@@ -39,8 +40,7 @@ export class EditarUsuarioComponent implements OnInit {
   putform(form: Usuario){
     let userid_up = this.activeroute.snapshot.paramMap.get('id_usuario');
     this.usuario.putUsuario(form,userid_up).subscribe(datos=>{
-      console.log(datos)
-      alert("Persona actualizada exitosamente")
+      Swal.fire('Persona Actualizada', 'Persona actualizada exitosamente', 'success');
       this.router.navigate(['usuarios']);
     })
   }

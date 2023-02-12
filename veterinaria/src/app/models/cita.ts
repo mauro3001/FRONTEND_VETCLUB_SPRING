@@ -1,9 +1,9 @@
 export interface Cita{
-    id_cita : String
-    profesional : String
-    tipo_mascota : String
-    nickname : String
-    tipo_proceso : String
-    fecha : String
-    hora : String
+    id_cita : String;
+    profesional : String;
+    tipoMascota : String;
+    tipoProceso : String;
+    nickname : String;
+    fecha : String;
+    hora : String;
 }

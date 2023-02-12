@@ -37,9 +37,9 @@
 .form{
     box-shadow: inset;
     border-radius: 20px;
-    background-color: aquamarine;
+    background-color: #55e9bc;
     min-width: 450px;
-    box-shadow: 0 0 20px 0 rgba(111, 36, 209, 0.9);
+    box-shadow: 0 0 50px 15px rgba(0, 0, 0, 0.9);
 }
 
 .contenedor form div{
@@ -64,4 +64,8 @@
     justify-content: center;
     column-gap: 10px;
     width: 100%;
+}
+
+.blue-snackbar{
+    background: #55e9bc;
 }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Profesional } from 'src/app/models/profesional';
 import { ProfesionalService } from 'src/app/services/profesional.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-profesional',
@@ -25,8 +26,7 @@ export class CrearProfesionalComponent implements OnInit {
 
   postform(form: Profesional){
     this.profesional.agregarPro(form).subscribe(info=>{
-      alert('Se ha registrado con exito')
-      console.log(info)
+      Swal.fire('Profesional Guardado', 'Profesional registrado con exito', 'success');
       this.router.navigate(['profesionales'])
     })
   }

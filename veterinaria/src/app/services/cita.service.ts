@@ -10,11 +10,12 @@ export class CitaService {
 
   constructor(private http: HttpClient) { }
 
-  url = "http://localhost:5000/cita"
+  url = "http://localhost:8080/api/cita"
 
   //metodo para llamar la info de citas conectados a bd y la interfaz
   obtenerCita():Observable<Cita[]>{
-    return this.http.get<Cita[]>(this.url)
+    let ruta = this.url+'s';
+    return this.http.get<Cita[]>(ruta);
   }
 
   //metodo para llamar un solo usuario
@@ -31,14 +32,15 @@ export class CitaService {
 
   //agregar una cita
   agregarCita(form: Cita):Observable<Cita>{
-    return this.http.post<Cita>(this.url,form)
+    let way = this.url+'/agregar';
+    return this.http.post<Cita>(way,form);
   }
 
   //metodo para eliminar cita
   eliminarCita(id_cita:number):Observable<Cita>{
-    let ruta2 = this.url+'/'+id_cita
+    let ruta2 = this.url+'/eliminar/'+id_cita
 
-    return this.http.delete<Cita>(ruta2, {
+    return this.http.get<Cita>(ruta2, {
       headers: new HttpHeaders({ 'Content-Type': 'aplication/json'})
     })
   }

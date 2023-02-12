@@ -346,6 +346,11 @@ a:focus {
   font-size: 5rem;
 }
 
+.title1{
+  font-size: 35px !important;
+  margin-bottom: 25px;
+}
+
 .slider_section .detail-box a {
   display: inline-block;
   padding: 12px 45px;
